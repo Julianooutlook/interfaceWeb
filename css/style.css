@@ -196,3 +196,46 @@ span {
 #imgsmall {
     border-radius: 12px;
 }
+
+.loading {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 480px) {
+
+    #buscarDados {
+        width: 40%;
+    }
+
+    .inputDados {
+        width: 50%;
+    }
+
+    .dadosMenores {
+        width: 25%;
+    }
+
+    .btnRemover {
+
+    }
+
+    .containerDate {
+        display: flex;
+        padding: 10px;
+        font-size: 10px;
+    
+    }
+
+    #getUsersdate:hover {
+        background-color: rgba(16, 155, 62, 0.788); 
+        color: rgba(0, 0, 0, 0.575);
+    }
+
+    #togglebtn:hover {
+        background-color: rgba(16, 155, 62, 0.788); 
+        color: rgba(0, 0, 0, 0.575);
+    }
+}
+

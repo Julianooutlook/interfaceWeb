@@ -73,6 +73,8 @@ async function fetchUsers() {
     try {
         const response = await fetch('https://registro-usuarios-1.onrender.com/usuarios');
 
+        
+
         if (!response.ok) {
             throw new Error(`Erro ${response.status}: ${response.statusText}`);
         }
@@ -84,33 +86,44 @@ async function fetchUsers() {
     }
 }
 
-
 async function renderUsers() {
     const userList = document.getElementById('userList');
-    const users = await fetchUsers();
+    const loadingIndicator = document.createElement('div');
 
+    loadingIndicator.textContent = 'Carregando usuários...';
+    loadingIndicator.classList.add('loading');
+    
     userList.innerHTML = '';
+    userList.appendChild(loadingIndicator);
 
-    if (users && users.length > 0) {
-        users.forEach(user => {
-            const userItem = document.createElement('div');
+    try {
+    
+        const users = await fetchUsers();
+        
+        userList.innerHTML = '';
 
-            userItem.classList.add('containerDate');
-
-            userItem.id = `user-${user.id}`;
-
-            userItem.innerHTML = ` <img id="imgsmall" src="${user.photo}" 
-            alt="Foto de ${user.name}" width="25" height="25" />
-            <span>Nome:</span> ${user.name}, <span>Email:</span> 
-            ${user.email}<button class="btnRemover" onclick="deleteUser
-            ('${user.id}')">Excluir</button>`;
-            userList.appendChild(userItem);
-        });
-    } else {
-        userList.textContent = 'Nenhum usuário encontrado.';
+        if (users && users.length > 0) {
+            users.forEach(user => {
+                const userItem = document.createElement('div');
+                userItem.classList.add('containerDate');
+                userItem.id = `user-${user.id}`;
+                userItem.innerHTML = ` 
+                    <img id="imgsmall" src="${user.photo}" 
+                    alt="Foto de ${user.name}" width="25" height="25" />
+                    <span>Nome:</span> ${user.name}, 
+                    <span>Email:</span> ${user.email}
+                    <button class="btnRemover" onclick="deleteUser('${user.id}')">Excluir</button>`;
+                userList.appendChild(userItem);
+            });
+        } else {
+            userList.textContent = 'Nenhum usuário encontrado.';
+        }
+    } catch (error) {
+        userList.textContent = 'Erro ao carregar usuários.';
+        console.error(error);
     }
-
 }
+
 document.getElementById('getUsersdate').addEventListener('click', renderUsers);
 
 async function recolherItens() {
