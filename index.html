@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="js/script.js" async></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <form id="userForm">
+        <h1>Formulario</h1>
+        <button id="buscarDados" type="button">Preencher</button>
+        <input placeholder="Nome" class="inputDados" id="name" type="text">
+        <input placeholder="Email" class="inputDados" id="email" type="email">
+        <input class="dadosMenores" id="date" type="date">
+        <input placeholder="Idade" class="dadosMenores" id="age" type="" min="0" max="999">
+        <button id="BtnCadastrar" type="button">Cadastrar</button>
+        <input id="btnReset" type="reset">
+
+
+
+        
+    </form>
+    <div id="containerPicture">
+        <picture>
+            <img id="userPhoto" src="" alt="">
+        </picture>
+    </div>
+    <div id="message"></div>
+
+    <div id="containerBtnListar">
+        <button id="getUsersdate">Buscar</button>
+        <button id="togglebtn">Recolher</button>
+    </div>
+
+    <div id="userList"></div>
+    
+
+</body>
+
+</html>
