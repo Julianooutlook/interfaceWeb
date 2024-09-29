@@ -165,6 +165,12 @@ picture img {
     width: 10px;
 }
 
+span {
+    color: rgba(17, 197, 77, 0.788);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 .btnRemover {
     display: flex;
     cursor: pointer;
@@ -183,5 +189,10 @@ picture img {
     justify-content: center;
     background: linear-gradient( to right, #0b1215 0,  rgb(0, 153, 255) 100%);
     color: rgb(255, 255, 255);
+    text-decoration: underline;
     
+}
+
+#imgsmall {
+    border-radius: 12px;
 }

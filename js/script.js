@@ -1,5 +1,5 @@
 
-document.getElementById('buscarDados').addEventListener('click', async function() {
+document.getElementById('buscarDados').addEventListener('click', async function () {
     try {
         const apiResponse = await fetch('https://randomuser.me/api/');
         const data = await apiResponse.json();
@@ -22,11 +22,11 @@ document.getElementById('buscarDados').addEventListener('click', async function(
     document.getElementById('message').textContent = '';
 });
 
-document.getElementById('btnReset').addEventListener('click', function() {
+document.getElementById('btnReset').addEventListener('click', function () {
     document.getElementById('userPhoto').src = '';
 });
 
-document.getElementById('BtnCadastrar').addEventListener('click', async function() {
+document.getElementById('BtnCadastrar').addEventListener('click', async function () {
     const nome = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const dataNascimento = document.getElementById('date').value;
@@ -61,7 +61,7 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
         }
 
         await document.getElementById('userForm').reset();
-        document.getElementById('userPhoto').style.display = 'none'; 
+        document.getElementById('userPhoto').style.display = 'none';
         document.getElementById('message').textContent = 'Usuário Salvo !';
 
     } catch (error) {
@@ -97,26 +97,28 @@ async function renderUsers() {
 
             userItem.classList.add('containerDate');
 
-            userItem.id = `user-${user.id}`; 
+            userItem.id = `user-${user.id}`;
 
-            userItem.innerHTML = `
-                Nome: ${user.name}, Email: ${user.email}
-                <button class="btnRemover" onclick="deleteUser('${user.id}')">Excluir</button>`;
+            userItem.innerHTML = ` <img id="imgsmall" src="${user.photo}" 
+            alt="Foto de ${user.name}" width="25" height="25" />
+            <span>Nome:</span> ${user.name}, <span>Email:</span> 
+            ${user.email}<button class="btnRemover" onclick="deleteUser
+            ('${user.id}')">Excluir</button>`;
             userList.appendChild(userItem);
         });
     } else {
         userList.textContent = 'Nenhum usuário encontrado.';
     }
-    
+
 }
 document.getElementById('getUsersdate').addEventListener('click', renderUsers);
 
 async function recolherItens() {
-    
+
     const listaUsuarios = document.getElementById('userList');
     const btnAlterarNome = document.getElementById('togglebtn');
 
-     if (listaUsuarios.style.display === 'none' ) {
+    if (listaUsuarios.style.display === 'none') {
         listaUsuarios.style.display = 'flex';
         btnAlterarNome.textContent = 'Recolher';
     } else {
@@ -127,8 +129,8 @@ async function recolherItens() {
 document.querySelector('#togglebtn').addEventListener('click', recolherItens);
 
 
-async function deleteUser(id) { 
-    
+async function deleteUser(id) {
+
     try {
         const response = await fetch(`https://registro-usuarios-1.onrender.com/usuarios/${id}`, {
             method: 'DELETE',
