@@ -133,7 +133,7 @@ async function recolherItens() {
 
     if (listaUsuarios.style.display === 'none') {
         listaUsuarios.style.display = 'flex';
-        btnAlterarNome.textContent = 'Recolher';
+        btnAlterarNome.textContent = 'Ocultar';
     } else {
         listaUsuarios.style.display = 'none';
         btnAlterarNome.textContent = 'Ocultar';
