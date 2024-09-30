@@ -136,7 +136,7 @@ async function recolherItens() {
         btnAlterarNome.textContent = 'Ocultar';
     } else {
         listaUsuarios.style.display = 'none';
-        btnAlterarNome.textContent = 'Ocultar';
+        btnAlterarNome.textContent = 'Mostrar';
     }
 }
 document.querySelector('#togglebtn').addEventListener('click', recolherItens);
