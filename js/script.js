@@ -1,4 +1,5 @@
 
+
 document.getElementById('buscarDados').addEventListener('click', async function () {
     try {
         const apiResponse = await fetch('https://randomuser.me/api/');
@@ -27,6 +28,7 @@ document.getElementById('btnReset').addEventListener('click', function () {
 });
 
 document.getElementById('BtnCadastrar').addEventListener('click', async function () {
+
     const nome = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const dataNascimento = document.getElementById('date').value;
@@ -38,6 +40,12 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
         return;
     }
 
+    const dotLoading = document.getElementById('dot-loading');
+
+    if (dotLoading.style.display = 'none') {
+        dotLoading.style.display = 'flex';
+    }     
+
     const userData = {
         name: nome,
         email: email,
@@ -45,6 +53,8 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
         dateOfBirth: dataNascimento,
         photo: photoUrl
     };
+
+    
 
     try {
         const response = await fetch('https://registro-usuarios-1.onrender.com/add-user', {
@@ -67,6 +77,8 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
     } catch (error) {
         console.error('Erro ao salvar usuário:', error);
     }
+
+    dotLoading.textContent = '';
 });
 
 async function fetchUsers() {
@@ -165,4 +177,5 @@ async function deleteUser(id) {
         alert('Erro ao deletar usuário');
     }
 }
+
 
