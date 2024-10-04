@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +61,50 @@ form {
     border-radius: 4px;
     border: transparent;
     padding: 4px;
+}
 
+#dot-loading {
+    display: none;
+}
+
+#ponto-1,
+#ponto-2,
+#ponto-3,
+#ponto-4 {
+    color: rgba(23, 255, 2, 0.658);
+    border-radius: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#ponto-1:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#ponto-2:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+#ponto-3:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+#ponto-4:nth-child(4) {
+    animation-delay: 0.5s;
 }
 
 #BtnCadastrar:hover {
