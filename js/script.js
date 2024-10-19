@@ -54,10 +54,8 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
         photo: photoUrl
     };
 
-    
-
     try {
-        const response = await fetch('https://registro-usuarios-r2iu.onrender.com/add-user', {
+        const response = await fetch('https://registro-usuarios-w3k8.onrender.com/add-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +81,7 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
 
 async function fetchUsers() {
     try {
-        const response = await fetch('https://registro-usuarios-1.onrender.com/usuarios');
+        const response = await fetch('https://registro-usuarios-w3k8.onrender.com/usuarios');
 
         
 
@@ -157,7 +155,7 @@ document.querySelector('#togglebtn').addEventListener('click', recolherItens);
 async function deleteUser(id) {
 
     try {
-        const response = await fetch(`https://registro-usuarios-1.onrender.com/usuarios/${id}`, {
+        const response = await fetch(`https://registro-usuarios-w3k8.onrender.com/${id}`, {
             method: 'DELETE',
         });
 
