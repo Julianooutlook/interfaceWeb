@@ -57,7 +57,7 @@ document.getElementById('BtnCadastrar').addEventListener('click', async function
     
 
     try {
-        const response = await fetch('https://registro-usuarios-e59y.onrender.com/add-user', {
+        const response = await fetch('https://registro-usuarios-r2iu.onrender.com/add-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
