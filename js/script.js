@@ -154,7 +154,7 @@ document.querySelector('#togglebtn').addEventListener('click', recolherItens);
 
 async function deleteUser(id) {
 
-    try {
+    try {https:
         const response = await fetch(`https://registro-usuarios-4vdi.onrender.com/${id}`, {
             method: 'DELETE',
         });
